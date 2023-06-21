@@ -14,4 +14,4 @@ for i in range(len(coeff_power)):
     if i != len(coeff_power)-1:
         print(str(derivative[i].coefficient) +  'x^' + str(derivative[i].power) + '+', end = '\r')
     else:
-        print(str(derivative[i].coefficient) +  'x^' + str(derivative[i].power), end = '\r')
+        print(str(derivative[i].coefficient) +  'x^' + str(derivative[i].power))
