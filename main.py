@@ -8,7 +8,10 @@ formula = '2*x^0$+$'+cd.call_sum(1,2,'i*x^i', 'i')
 
 coeff_power = cd.interprete_string_formula(formula, 'x')
 
+derivative = cd.poly_deriv(coeff_power)
+
 for i in range(len(coeff_power)):
-    print(str(cd.poly_deriv(coeff_power)[i].coefficient) +  'x^' + str(cd.poly_deriv(coeff_power)[i].power))
-
-
+    if i != len(coeff_power)-1:
+        print(str(derivative[i].coefficient) +  'x^' + str(derivative[i].power) + '+', end = '\r')
+    else:
+        print(str(derivative[i].coefficient) +  'x^' + str(derivative[i].power), end = '\r')
