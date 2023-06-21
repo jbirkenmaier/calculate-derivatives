@@ -23,7 +23,10 @@ def call_sum(start, stop, function, ind_name):
 def interprete_string_formula(str_formula, variable_name):
     terms = str_formula.split('$+$')
     coefficients = [element.partition(variable_name)[0] for element in terms]
-    coefficients = [float(eval(element[:-1])) for element in coefficients]
+    try:
+        coefficients = [float(eval(element[:-1])) for element in coefficients]
+    except:
+        pass
     powers = [element.partition(variable_name)[2] for element in terms]
     powers = [float(element.replace('^', '').replace('+', '').replace('$','')) for element in powers]
     return coefficients, powers
