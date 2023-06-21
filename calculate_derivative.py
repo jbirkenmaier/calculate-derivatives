@@ -23,10 +23,7 @@ def call_sum(start, stop, function, ind_name):
 def interprete_string_formula(str_formula, variable_name):
     terms = str_formula.split('$+$')
     coefficients = [element.partition(variable_name)[0] for element in terms]
-    try:
-        coefficients = [float(eval(element[:-1])) for element in coefficients]
-    except:
-        pass
+    coefficients = [float(eval(element[:-1])) for element in coefficients]
     powers = [element.partition(variable_name)[2] for element in terms]
     powers = [float(element.replace('^', '').replace('+', '').replace('$','')) for element in powers]
     return coefficients, powers
@@ -43,6 +40,12 @@ def interprete_string_formula(str_formula, variable_name):
 #to calculate the polynomial derivative I guess it is useful to read the polynomial as a string, then
 #to interprete every term of the polynomial as an element of a class with coefficient and exponent.
 #Then we can calculate the derivative easily for every element of the class, meaning for any term
+
+
+def initialize_poly_term(coefficient, power, variable):
+    pass
+    
+    
 
 
 def deriv_poly(coeffs_powers, variable):
