@@ -42,5 +42,8 @@ def poly_deriv(poly_attributes):
             element.power -=1
     return poly_attributes
         
+def create_terms_from_string(string_input):
+    return string_input.split('+') 
     
-
+def simplify_terms:
+    pass

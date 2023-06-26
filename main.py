@@ -4,7 +4,9 @@ import math
 
 
 
-formula = '2*x^0$+$'+cd.call_sum(1,2,'i*x^i', 'i')
+formula = '2*x^(1/2)$+$'+cd.call_sum(1,2,'i*x^i', 'i')
+
+print(cd.create_terms_from_string('1+2*(x^2)*x^3'))
 
 coeff_power = cd.interprete_string_formula(formula, 'x')
 
